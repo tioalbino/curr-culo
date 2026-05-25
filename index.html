@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protofolio | Currículo| GabrielLiraTesch</title>
+    <!-- React e Babel CDN para execução direta -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <style>
+        /* Paleta de Cores Corporativa em Tema Escuro Permanente */
+        :root {
+            --bg-main: #0f172a; /* Fundo escuro principal */
+            --bg-card: #1e293b; /* Fundo dos cartões e blocos */
+            --text-main: #f8fafc; /* Texto claro principal */
+            --text-muted: #94a3b8; /* Texto secundário atenuado */
+            --accent-color: #38bdf8; /* Azul claro para destaques */
+            --border-color: #334155; /* Linhas de divisão sutis */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            font-size: 16px;
+        }
+
+        #root {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        *:focus {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Estrutura do Layout */
+        .container {
+            padding: 10px 0;
+        }
+
+        header {
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        .name-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            font-size: 0.95rem;
+            background-color: var(--bg-card);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .metadata-item strong {
+            color: var(--text-main);
+        }
+
+        .section-heading {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            margin: 40px 0 20px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .intro-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Lista de Projetos */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .project-item {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 24px;
+            background-color: var(--bg-card);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .project-header {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Grid de Competências */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-block {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            text-align: center;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function ProfessionalPortfolio() {
+            const dynamicProjects = [
+                {
+                    title: "Sistema de Automação e Assistente Virtual Integrado a IA",
+                    description: "Desenvolvimento autônomo de uma arquitetura de comunicação automatizada utilizando a biblioteca Socketbaileys para manipulação de conexões com o WhatsApp. Integração direta com a API estruturada do modelo GPT-4, viabilizando o processamento assíncrono de interações complexas e contextualizadas em tempo real.",
+                    stack: "Node.js / Socketbaileys / OpenAI API / JavaScript Assíncrono"
+                },
+                {
+                    title: "Plataforma Web para Resolução de Cenários Críticos",
+                    description: "Construção de uma aplicação Web responsiva desenvolvida para a simulação e resolução de problemáticas corporativas. A interface atua na captura de dados inseridos pelo usuário e consome endpoints da API da OpenAI, processando análises lógicas detalhadas e sugerindo tomadas de decisão estruturadas.",
+                    stack: "HTML5 / CSS3 / JavaScript Avançado / Integração de APIs REST"
+                }
+            ];
+
+            const dynamicSkills = [
+                "HTML5 / CSS3", "JavaScript Avançado", "React.js", 
+                "Node.js", "Arquitetura REST", "Modelos de Linguagem (LLM)", 
+                "Controle de Versão Git", "Lógica de Automação", "Sistemas de Robótica", "Acessibilidade Digital (WCAG)"
+            ];
+
+            return (
+                <div className="container">
+                    <header>
+                        <h1 className="name-title">Gabriel Lira Tesch</h1>
+                        <p className="subtitle">Desenvolvedor de Software Júnior e Especialista Front-End</p>
+                        
+                        <div className="metadata-grid">
+                            <div className="metadata-item"><strong>Idade:</strong> 17 anos</div>
+                            <div className="metadata-item"><strong>Localização:</strong> Espírito Santo, Brasil</div>
+                            <div className="metadata-item"><strong>Contacto:</strong> +55 27 99815-8753</div>
+                            <div className="metadata-item"><strong>E-mail:</strong> gabrieltesch9@gmail.com</div>
+                            <div className="metadata-item"><strong>Perfil PCD:</strong> Albinismo Oculocutâneo (Deficiência Visual / Baixa Visão)</div>
+                            <div className="metadata-item"><strong>Formação:</strong> Ensino Médio - Escola Luiz Jouffroy</div>
+                        </div>
+                    </header>
+
+                    <main>
+                        <section>
+                            <h2 className="section-heading">Resumo Profissional</h2>
+                            <p className="intro-text">
+                                Desenvolvedor dedicado à criação de soluções lógicas avançadas com domínio nas tecnologias estruturais da web e ecossistemas JavaScript. 
+                                Devido à vivência direta com o albinismo oculocutâneo e a baixa visão, possuo um forte compromisso ético e técnico com os padrões de Acessibilidade Digital (WCAG), 
+                                aplicando diretrizes que garantem usabilidade irrestrita a todos os perfis de usuários. Premiado com Medalha de Bronze na Olimpíada de Robótica, 
+                                possuo sólida aptidão para a resolução de problemas complexos, pensamento analítico e autonomia intelectual.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2 className="section-heading">Projetos de Engenharia de Software</h2>
+                            <div className="project-list">
+                                {dynamicProjects.map((proj, idx) => (
+                                    <div className="project-item" key={idx}>
+                                        <h3 className="project-header">{proj.title}</h3>
+                                        <p className="project-desc">{proj.description}</p>
+                                        <div className="project-tech">Tecnologias: {proj.stack}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 className="section-heading">Conquistas Académicas</h2>
+                            <div className="project-item">
+                                <h3 className="project-header">Medalha de Bronze – Olimpíada de Robótica</h3>
+                                <p className="project-desc">
+                                    Premiação de prestígio que valida competências essenciais em lógica de automação, montagem de arquiteturas de hardware, manutenção de dispositivos eletrônicos e trabalho em equipe sob rigorosos critérios de avaliação.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 className="section-heading">Habilidades Técnicas</h2>
+                            <div className="skills-container">
+                                {dynamicSkills.map((skill, idx) => (
+                                    <div className="skill-block" key={idx}>{skill}</div>
+                                ))}
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ProfessionalPortfolio />);
+    </script>
+</body>
+</html>
